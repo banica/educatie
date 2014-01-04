@@ -1,0 +1,88 @@
+[Root]
+Most Recent Package=shuffle_install
+
+
+[Package|shuffle_install|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\projects\shuffle-exchange\Package
+
+[Package|shuffle_install|Configure DAO ISAMs]
+Applicable=No
+
+[Package|shuffle_install|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|shuffle_install|Files Found]
+
+[Package|shuffle_install|Files Released]
+
+[Package|shuffle_install|Missing Dependency Information]
+
+[Package|shuffle_install|Out-of-Date Dependency Information]
+
+[Package|shuffle_install|Files Added]
+
+[Package|shuffle_install|Files Removed]
+
+[Package|shuffle_install|Files In Project]
+D:\projects\shuffle-exchange\shuffle.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|shuffle_install|Configure Registry Files]
+Applicable=No
+
+[Package|shuffle_install|Configure Remote Servers]
+Applicable=No
+
+[Package|shuffle_install|Install Locations]
+D:\projects\shuffle-exchange\shuffle.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|shuffle_install|Configure Shared Files]
+Applicable=Yes
+D:\projects\shuffle-exchange\shuffle.exe=No
+
+[Package|shuffle_install|Distribution]
+Type=single
+Size=
+Title=shuffle-exchange
+
+[Package|shuffle_install|IconGroups]
+Group0=shuffle-exchange
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|shuffle_install|shuffle-exchange]
+Icon1=shuffle.exe
+Title1=shuffle-exchange
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|shuffle_install|Package]
+PackageFolder=D:\projects\shuffle-exchange\Package
+ProjectFolder=D:\projects\shuffle-exchange
+ServerSideCab=
+File1=D:\projects\shuffle-exchange\Package\setup.exe
+File2=D:\projects\shuffle-exchange\Package\Setup.Lst
+File3=D:\projects\shuffle-exchange\Package\shuffle.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

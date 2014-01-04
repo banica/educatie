@@ -1,0 +1,39 @@
+
+Partial:
+
+(2p) 1. Sa se considere o structura pipeline cu 4 trepte care efectueaza
+o operatie de adunare a 2 nr- intrari.
+Se presupune ca fiecare treapta introduce o intarziere de 2 unitati,
+celelalte intarzieri se neglijeaza.
+Sa se realizeze suma a 16 numere cu aceasta structura.
+Sa se elaboreze o metoda care sa minimizeze timpul de calcul.
+Care este acest timp in cazul exemplului.
+
+(2p) 2. Prin ce difera o masina multiprocesor de una multicalculator?
+
+(2p) 3. Presupunem ca avem o unitate centrala de prelucrare cu
+4 trepte pt operatii de load si store
+       -fetch
+       -calc. adresa
+       -memory read
+       -write back
+si 3 trepte pt celelalte instructiuni de tip registru-registru:
+-fetch
+-calcul
+-writeback
+Sa se arata modelul de rezervare pt un program:
+LOAD z (ACC<- z)
+ADD R1 (ACC<-ACC+R1)
+STORE z (z<- ACC)
+SUB R2 (AC<-ACC-R2)
+
+De cate cicluri e nevoie pentru executia prg
+cu o suprapunere maxima in executia intructiunilor?
+
+(1p) 4.Exista vreo asemanare inre procesoarele suprascalare si cele VLIW?
+
+(1p) 5.Ce imbunatatiri isi propune sa aduca topologia cu magistrale multiple?
+
+(1p) 6. Ce rol are common database in cadrul schemei Tomasulo?
+
+Timp de lucru  90 min

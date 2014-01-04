@@ -1,0 +1,15 @@
+
+Salut
+Subiectele SPM din 25 Ian de la final au fost:
+
+1. Metode de dirijare in retele Omega
+
+2. Protocoale cu directoare centraliztate(exemplu pt 8 procesoare)
+
+3.Implementare algoritm pentru problema filozofilor.
+
+
+SPM 27 ian:
+identice cu cele de pe 26 ian ...
+ 
+mai putin problema filosofilor chinezi, care a fost inlocuita de o problema care cerea algoritm paralel asimcron care sa faca inmultirea a 2 matrici patratice.

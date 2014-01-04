@@ -1,0 +1,6 @@
+
+1. Comparatie intre procesoarele superscalare si procesoarele VLIW
+2. Evaluati expresia 4*x^2+5 in punctul x=3,14 utilizand metoda bazata pe topologia Shuffle Exchange.
+3. Cum influenteaza dimensiunea unei trepte de executie functionarea unui procesor pipeline ? Detaliati.
+ 
+Fiecare subiect 3p.  Durata 1h:30min.
