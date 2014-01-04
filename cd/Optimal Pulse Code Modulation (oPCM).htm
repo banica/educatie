@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://cips02.physik.uni-bonn.de/~scheller/audio/main.html -->
+<HTML><HEAD><TITLE>Optimal Pulse Code Modulation (oPCM) and its application as an audio quality parameter</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY bgColor=#bbbbbb>
+<H2>Optimal Pulse Code Modulation (oPCM) and its application as an audio quality 
+parameter</H2><I>Optimale Puls-Code-Modulation (oPCM) und ihre Anwendung als 
+Audioqualitätsparameter</I>
+<P>
+<P>The introduction of digital audio (Compact Disc) has boosted the audio 
+quality compared to the old analog media. Since then, the term "digital" has 
+become a synonym of quality. This quality is bought at the price of an enormous 
+amount of data - over 700'000 bits per second (700 kbps) are necessary for 
+encoding a mono signal.
+<P>If you reduce this data rate, the sound quality suffers - because you simply 
+throw away some information. But this reduction is needed for low bandwidth 
+channels as a telephone line, the internet or terrestic broadcasts.
+<P>Standard digital sound is stored as PCM data (pulse code modulation): The 
+audio signal is measured at a fixed rate ("sampling rate") with a given 
+precision ("resolution"). On a CD, each stereo channel is measured 44'100 times 
+a second with a precision of 16 bits, resulting in 705'600 bits per second. 
+Decreasing this rate can be achieved by lowering the sampling rate or the 
+resolution. But the best idea is to lower both values. Of course, there is a 
+best compromise between reducing the sampling rate and the resolution. These 
+best combinations are called "optimal PCM" (oPCM).
+<P>But there are much more <A 
+href="http://fas.sfu.ca/cs/undergrad/CourseMaterials/CMPT365/material/notes/Chap4/Chap4.3/Chap4.3.html" 
+target=_top>intelligent ways</A> in decreasing the data rate with (hopefully!) 
+fewer audible quality loss. Special audio formats ("codecs") were introduced: 
+ADPCM (adaptive differential pulse code modulation), MPEG audio ("layer I, II, 
+III") and RealAudio for example.
+<P>How much quality do they gain at a given bit rate compared to uncompressed 
+digital data? In the following table, various codecs are compared with oPCM. 
+From the right to the left, the bit rate decreases (logarithmic scale). At the 
+top of the table, the sound quality is best and decreases to the bottom. The 
+quality parameter is defined by the reference oPCM files on the white diagonal 
+fields.
+<P>The bigger the difference between the conventional oPCM files on the diagonal 
+and the test items, the more "intelligent" the codec. The best codecs are on the 
+blue fields. 
+<P>
+<SCRIPT language=JavaScript>
+<!--
+  if (navigator.appVersion.indexOf('2.0') != -1)
+    if (navigator.appVersion.indexOf('3.0') == -1)
+    document.writeln('<b>This table displays correctly with Netscape 3.0 only. Please upgrade your browser.</b><p>');
+// -->
+</SCRIPT>
+<NOEMBED><B>This table displays correctly with Netscape 3.0 only. Please upgrade 
+your browser.</B>
+<P></NOEMBED>
+<HR>
+
+<CENTER>
+<H2>Audio codec quality comparison chart</H2>
+<P><B>Compare on your own: Just click onto the test items below.</B>
+<P>
+<TABLE bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD>
+    <TH rowSpan=2></TH>
+    <TH colSpan=21>mono bit rate [kbps] &gt;</TH></TD></TR>
+  <TR>
+    <TD>
+    <TH><TT><FONT size=-1>16</FONT></TT></TH>
+    <TH><TT><FONT size=-1>20</FONT></TT></TH>
+    <TH><TT><FONT size=-1>24</FONT></TT></TH>
+    <TH><TT><FONT size=-1>28</FONT></TT></TH>
+    <TH><TT><FONT size=-1>32</FONT></TT></TH>
+    <TH><TT><FONT size=-1>40</FONT></TT></TH>
+    <TH><TT><FONT size=-1>48</FONT></TT></TH>
+    <TH><TT><FONT size=-1>56</FONT></TT></TH>
+    <TH><TT><FONT size=-1>64</FONT></TT></TH>
+    <TH><TT><FONT size=-1>80</FONT></TT></TH>
+    <TH><TT><FONT size=-1>96</FONT></TT></TH>
+    <TH><TT><FONT size=-1>112</FONT></TT></TH>
+    <TH><TT><FONT size=-1>128</FONT></TT></TH>
+    <TH><TT><FONT size=-1>160</FONT></TT></TH>
+    <TH><TT><FONT size=-1>192</FONT></TT></TH>
+    <TH><TT><FONT size=-1>224</FONT></TT></TH>
+    <TH><TT><FONT size=-1>256</FONT></TT></TH>
+    <TH><TT><FONT size=-1>320</FONT></TT></TH>
+    <TH><TT><FONT size=-1>384</FONT></TT></TH>
+    <TH><TT><FONT size=-1>448</FONT></TT></TH>
+    <TH><TT><FONT size=-1>550</FONT></TT></TH></TD></TR>
+  <TR>
+    <TH rowSpan=21>
+      <CENTER>^<BR><BR>q<BR>u<BR>a<BR>l<BR>i<BR>t<BR>y<BR><BR>[Q]</CENTER></TH>
+    <TH><TT><FONT size=-1>9.1</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/192kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;&nbsp;&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q9,1-550kbps.wav">PCM</A></FONT></TT></TD>
+    <TH><TT><FONT size=-1>9.1</FONT></TT></TH>
+    <TH rowSpan=21>
+      <CENTER>^<BR><BR>q<BR>u<BR>a<BR>l<BR>i<BR>t<BR>y<BR><BR>[Q]</CENTER></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>8.8</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/96kbps.mp3">L3</A></FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/112kbpshq.mp3">L3+</A></FONT></TT></TD>
+    <TD align=middle bgColor=#7fbbff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/128kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>8.8</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>8.6</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q8,6-384kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>8.6</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>8.3</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/80kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/128kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>8.3</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>8.0</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q8,0-256kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>8.0</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>7.8</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/56kbpshq.mp3">L3+</A></FONT></TT></TD>
+    <TD align=middle bgColor=#7fbbff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/64kbpshq.mp3">L3+</A></FONT></TT></TD>
+    <TD align=middle bgColor=#7fffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/ra-3.0/80kbps.ra">RA3</A></FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/096kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#bbff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/adpcm/128kbps-adpcm.wav">ADP</A></FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>7.8</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>7.6</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/64kbps.mp3">L3</A></FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/080kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q7,6-192kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>7.6</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>7.3</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fbbff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/48kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/064kbps-10khz.mp2">L2*</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>7.3</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>7.0</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/32kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/056kbps-8khz.mp2">L2*</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q7,0-128kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>7.0</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>6.8</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#9999ff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/24kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>6.8</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>6.6</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/ra-3.0/40kbps.ra">RA3</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/adpcm/64kbps-adpcm.wav">ADP</A></FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q6,6-96kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>6.6</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>6.3</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#bbff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/048kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>6.3</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>6.0</FONT></TT></TH>
+    <TD bgColor=#9999ff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fbbff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q6,0-64kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>6.0</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>5.8</FONT></TT></TH>
+    <TD align=middle bgColor=#7fbbff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-iii/16kbps.mp3">L3</A></FONT></TT></TD>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#bbff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/032kbps-4khz.mp2">L2*</A></FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ff9999><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/layer-ii/064kbps.mp2">L2</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>5.8</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>5.6</FONT></TT></TH>
+    <TD bgColor=#7fffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/adpcm/32kbps-adpcm.wav">ADP</A></FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q5,6-48kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>5.6</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>5.3</FONT></TT></TH>
+    <TD align=middle bgColor=#7fffbb><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/ra-3.0/16kbps-4khz.ra">RA3</A></FONT></TT></TD>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#bbff7f><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/adpcm/24kbps-adpcm.wav">ADP</A></FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>5.3</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>5.0</FONT></TT></TH>
+    <TD bgColor=#7fff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q5,0-32kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>5.0</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>4.8</FONT></TT></TH>
+    <TD bgColor=#bbff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>4.8</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>4.6</FONT></TT></TH>
+    <TD bgColor=#ffff7f><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q4,6-24kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>4.6</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>4.3</FONT></TT></TH>
+    <TD bgColor=#ffffbb><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ffffff><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>4.3</FONT></TT></TH></TR>
+  <TR>
+    <TH><TT><FONT size=-1>4.0</FONT></TT></TH>
+    <TD align=middle bgColor=#ffffff><TT><FONT size=-1><A 
+      href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q4,0-16kbps.wav">PCM</A></FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TD bgColor=#ff9999><TT><FONT size=-1>&nbsp;</FONT></TT></TD>
+    <TH><TT><FONT size=-1>4.0</FONT></TT></TH></TR>
+  <TR>
+    <TD>
+    <TH rowSpan=2></TH>
+    <TH><TT><FONT size=-1>16</FONT></TT></TH>
+    <TH><TT><FONT size=-1>20</FONT></TT></TH>
+    <TH><TT><FONT size=-1>24</FONT></TT></TH>
+    <TH><TT><FONT size=-1>28</FONT></TT></TH>
+    <TH><TT><FONT size=-1>32</FONT></TT></TH>
+    <TH><TT><FONT size=-1>40</FONT></TT></TH>
+    <TH><TT><FONT size=-1>48</FONT></TT></TH>
+    <TH><TT><FONT size=-1>56</FONT></TT></TH>
+    <TH><TT><FONT size=-1>64</FONT></TT></TH>
+    <TH><TT><FONT size=-1>80</FONT></TT></TH>
+    <TH><TT><FONT size=-1>96</FONT></TT></TH>
+    <TH><TT><FONT size=-1>112</FONT></TT></TH>
+    <TH><TT><FONT size=-1>128</FONT></TT></TH>
+    <TH><TT><FONT size=-1>160</FONT></TT></TH>
+    <TH><TT><FONT size=-1>192</FONT></TT></TH>
+    <TH><TT><FONT size=-1>224</FONT></TT></TH>
+    <TH><TT><FONT size=-1>256</FONT></TT></TH>
+    <TH><TT><FONT size=-1>320</FONT></TT></TH>
+    <TH><TT><FONT size=-1>384</FONT></TT></TH>
+    <TH><TT><FONT size=-1>448</FONT></TT></TH>
+    <TH><TT><FONT size=-1>550</FONT></TT></TH></TD></TR>
+  <TR>
+    <TD>
+    <TH colSpan=21>mono bit rate [kbps] &gt;</TH></TD></TR></TBODY></TABLE>
+<P>
+<TABLE cellPadding=6>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <TABLE bgColor=#cccccc>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <H4>Q gain</H4></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD align=middle bgColor=#9999ff><TT>&gt; 2.0</TT></TD>
+                <TD>net compression ratio ~ 1:4 or better</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#7fbbff><TT>+ 1.8</TT></TD>
+                <TD>net compression ratio ~ 1:3.5</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#7fffff><TT>+ 1.6</TT></TD>
+                <TD>net compression ratio ~ 1:3</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#7fffbb><TT>+ 1.3</TT></TD>
+                <TD>net compression ratio ~ 1:2.5</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#7fff7f><TT>+ 1.0</TT></TD>
+                <TD>net compression ratio ~ 1:2</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#bbff7f><TT>+ 0.8</TT></TD>
+                <TD>net compression ratio ~ 1:1.75</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffff7f><TT>+ 0.6</TT></TD>
+                <TD>net compression ratio ~ 1:1.5</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffbb><TT>+ 0.3</TT></TD>
+                <TD>net compression ratio ~ 1:1.25</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>0.0</TT></TD>
+                <TD>no compression (reference oPCM)</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ff9999><TT>&lt; 0</TT></TD>
+                <TD>blow-up</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top align=right>
+      <TABLE bgColor=#cccccc>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD colSpan=2>
+                  <H4>Audio codecs and player sources</H4></TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>PCM</TT></TD>
+                <TD>reference optimal PCM files</TD></TR>
+              <TR>
+                <TD align=right></TD>
+                <TD>(simulated with standard rates)</TD></TR>
+              <TR>
+                <TD align=middle 
+                  bgColor=#ffffff><TT>&nbsp;&nbsp;L2&nbsp;&nbsp;</TT></TD>
+                <TD>Layer II, with CoolEdit/model #2</TD></TR>
+              <TR>
+                <TD></TD>
+                <TD><A 
+                  href="http://www-inst.eecs.berkeley.edu/~ctsay/mp2win32.html" 
+                  target=_top>player (Maplay)</A>, <A 
+                  href="http://www.syntrillium.com/load.htm" 
+                  target=_top>encoder</A></TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>L2*</TT></TD>
+                <TD>Layer II, pre-filtered spectrum</TD></TR>
+              <TR>
+                <TD></TD>
+                <TD>filtered at 4; 8; 10 kHz</TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>L3</TT></TD>
+                <TD>Layer III with l3enc Ver. 2.0</TD></TR>
+              <TR>
+                <TD></TD>
+                <TD><A 
+                  href="http://www.winsite.com/info/pc/win3/sounds/mp3-play.zip/" 
+                  target=_top>player (Winplay3)</A>, <A 
+                  href="http://www.iis.fhg.de/departs/amm/layer3" 
+                  target=_top>encoder</A></TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>L3+</TT></TD>
+                <TD>Layer III with l3enc Ver. 2.6</TD></TR>
+              <TR>
+                <TD></TD>
+                <TD>encoded with <I>hq</I> option</TD></TR>
+              <TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>RA3</TT></TD>
+                <TD>Real Audio 3.0</TD></TR>
+              <TR>
+                <TD></TD>
+                <TD><A 
+                  href="http://www.realaudio.com/hpproducts/player/index.html" 
+                  target=_top>player</A>, <A 
+                  href="http://www.realaudio.com/hpproducts/encoder/index.html" 
+                  target=_top>encoder</A></TD></TR>
+              <TR>
+                <TD align=middle bgColor=#ffffff><TT>ADP</TT></TD>
+                <TD>ADPCM (Microsoft 
+      Windows)</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=right colSpan=2>
+      <TABLE cellPadding=10 bgColor=#cccccc>
+        <TBODY>
+        <TR>
+          <TD>
+            <H4>Remarks</H4><FONT size=-1>
+            <OL>
+              <LI>For playing the sample sounds, you must install the 
+              appropriate players first. Just follow the links in the box above. 
+              With other players, the sound quality may suffer. 
+              <LI>The codec comparison tests were performed with cheap PC 
+              loudspeakers ("Typhoon 20 W PMPO"). The RA3 and L3+ codecs rated 
+              at <I>Q</I> = 7.8 sound significantly better when listened with 
+              high quality headphones (relative to the calibration oPCM files): 
+              <I>Q</I> = 8.3. This seems to be caused by the psychoacoustic 
+              modelling which fails with nonlinear loudspeakers. 
+              <LI>Since Layer II and III are open standards, the results may 
+              vary slightly from encoder to encoder. All what you can learn from 
+              this comparison test is how a specific <I>encoder</I> performs 
+              with the given <I>sample sound</I>. 
+              <LI>Below 192 kbps mono, the used Layer III encoder <I>l3enc V 
+              2.0</I> cannot encode a 16,5 kHz tone, which is well within most 
+              people's perception limit (e.g. cricket <A 
+              href="http://cips02.physik.uni-bonn.de/~scheller/audio/chirp/chirp.wav">chirp</A> 
+              - [Grillenzirpen]). However, the sample sound CEMBALO sounds 
+              transparent. 
+              <LI>Please let me know if you disagree with a rating. Above 
+              <I>Q</I> = 7.8 the offered quality is very close to CD, but you 
+              <I>can</I> hear the difference. 
+              <LI>The test sound <A 
+              href="http://cips02.physik.uni-bonn.de/~scheller/audio/eich/q9,1-550kbps.wav">CEMBALO</A> 
+              is the beginning of J. S. Bach's <I>canon per tonus</I> from his 
+              <I>Musikalisches Opfer</I>. You can find the full length version 
+              on "<A 
+              href="http://cips02.physik.uni-bonn.de/~scheller/acoustic-illusions/main.html">Acoustic 
+              illusions</A>". </LI></OL></FONT>
+            <P></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<P></CENTER>Evaluating audio compression is complicated because there is no 
+objective quality parameter. This is why the comparison with uncompressed raw 
+data (PCM files) is introduced. The maximum quality that a PCM file can deliver 
+at a given bit rate is determined first. Since there are two parameters that 
+define a PCM file (sampling rate and resolution) the best combination of these 
+two values has to be worked out. This is how optimal PCM (oPCM) streams are 
+defined: They are the best compromise between sampling rate and resolution at a 
+fixed bitrate. oPCM files depend on a single parameter, the perceptional quality 
+parameter <I>Q</I>. 
+<P><IMG height=292 alt="'loss' and 'net compression'" 
+src="Optimal Pulse Code Modulation (oPCM)_files/tabelle.gif" width=377 
+align=right> Sound data compression consits of two steps: 
+<UL>
+  <LI><FONT color=#bb0000>compression <I>with</I> audible quality loss 
+  ("loss")</FONT> 
+  <LI><FONT color=#0000bb>compression <I>without</I> audible quality loss ("net 
+  compression")</FONT>. </LI></UL>oPCM files can only compress the sound data 
+<I>with</I> quality loss (presumed that the raw data is also oPCM*). They do not 
+offer any net compression. By this means it is possible to evaluate the 
+important <I>net compression</I> of a given codec candidate. oPCM files serve 
+therefore as reference files.
+<P>For example, Real Audio 3.0 sounds at 40 kbps ("ISDN mono") roughly like oPCM 
+at 96 kbps (<I>Q</I>=6.6). This means a net compression ratio of 1:2.4 (<I>Q</I> 
+gain = +1.3). However, most of the total compression is loss.
+<P>There is one technical obstacle when generating oPCM files: Standard sound 
+devices do not allow "odd" sampling rates and resolutions. I have therefore 
+simulated the oPCM quality by upsampling to a higher rate and resolution. 
+<P>
+<UL><FONT size=-1>* the standard raw data (CD audio = 16 bits at 22 kHz audio 
+  bandwidth) is not oPCM. You can lower the audio bandwidth to ~ 18 kHz without 
+  quality loss. This is why oPCM offers some net compression (~18:22) relative 
+  to CD audio.</FONT> </UL>
+<P>In these first tests, the sample sound CEMBALO was used. It has a very broad 
+frequency spectrum and reveals most compression artifacts (distortion, dynamic 
+hiss). It is much more suitable for codec evaluation than narrow-band signals 
+(e.g. string orchestra) that pose no severe problem for codecs. However, CEMBALO 
+has very limited dynamic (no silence intervals) and no isolated high 
+frequencies. The spectrum of CEMBALO is given below.
+<P>
+<CENTER><IMG height=206 alt="Spectrum of CEMBALO" 
+src="Optimal Pulse Code Modulation (oPCM)_files/cembalo.gif" width=386></CENTER>
+<P>The following <B>preliminary</B> data were obtained in 3 listening tests with 
+headsets (Sennheiser Reference II) and the test file CEMBALO. The tests were 
+performed at 10, 25, 37.5, 50, 75, 100, 150, 200, 300, 400 kbps in steps of 1 
+bit. The plot shows the interpolated curve. The estimated standard deviation is 
+± 0.3 bit (1 sigma).
+<P>Precision measurements are currently performed with other test sounds 
+(including <A 
+href="http://cips02.physik.uni-bonn.de/~scheller/audio/sprecher/sprecher.wav">speech</A>), 
+higher resolution and more listeners. 
+<CENTER>
+<P>
+<TABLE bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><PRE>        
+  RESOLUTION [bit]     1 kHz   2 kHz   4 kHz   8 kHz   16 kHz  
+       16 + . . . . . . . : . . . : . . . : . . . : . . . +   X 
+          . . . . . . . . : . . . : . . . : . . . : . . . +  CD
+       15 + . . . . . . . : . . . : . . . : . . . : . . . + 
+          . . . . . . . . : . . . : . . . : . . . : . . .<FONT color=#ff0000>O</FONT>+ 
+       14 + . . . . . . . : . . . : . . . : . . . : . . .<FONT color=#ff0000>O</FONT>+ 
+          . . . . . . . 80 dB . .:. . . .:. . . .:. . . <FONT color=#ff0000>O</FONT>+. 
+       13 + + + + + + + +:+ + + +:+ + + +:+ + + +:+ + + <FONT color=#ff0000>O</FONT>+. 
+          . . . . . . . : . . . : . . . : . . . : . . .<FONT color=#ff0000>O</FONT>+ . 
+       12 + . . . . . . : . . . : . . . : . . . : . . .<FONT color=#ff0000>O</FONT>+ . 
+          . . . . . . .:. . . .:. . . .:. . . .:. . . <FONT color=#ff0000>O</FONT>+. . 
+       11 + . . . . . : . . . : . . . : . . . : . . .<FONT color=#ff0000>O</FONT>+ . . 
+          . . . . . . : . . . : . . . : . . . : . . <FONT color=#ff0000>O</FONT> + . . 
+       10 + . . . . .:. . . .:. . . .:. . . .:. . <FONT color=#ff0000>OO</FONT>.+. . . 
+          . . . . . .:. . . .:. . . .:. . . .:. <FONT color=#ff0000>OO</FONT>. .+. . . 
+        9 + . . . . : . . . : . . . : . . . :<FONT color=#ff0000>OOO</FONT>. . + . . . 
+          . . . . .:. . . .:. .ISDN:. . .<FONT color=#ff0000>OOOO</FONT> . . .+. . . . 
+        8 + . . . : . . . : . . . X <FONT color=#ff0000>OOOOO</FONT> : . . . + . . . . 
+          . . . . : . . . : . <FONT color=#ff0000>OOOOOO</FONT>. . . : . . . + . . . . 
+        7 + . . .:. . . .<FONT color=#ff0000>OOOOO</FONT>. .:. . . .:. . . .+. . . . . 
+          . . . : . .<FONT color=#ff0000>OOOO</FONT> . . . : . . . : . . . + . . . . . 
+        6 + . .:.<FONT color=#ff0000>OOOO</FONT> .:. . . .:. . . .:. . . .+. . . . . . 
+          . . :<FONT color=#ff0000>OO</FONT> . . : . . . : . . . : . . . + . . . . . . 
+        5 + .<FONT color=#ff0000>OO</FONT> . . .:. . . .:. . . .:. . . .+. . . . . . . 
+          .<FONT color=#ff0000>OO</FONT> . . . : . . . : . . . : . . . + . . . . . . . 
+        4 . . . . ::. . . ::. . . ::. . . + .16 kHz . . . . 
+          . . . ::. . . ::. . . ::. . . + . . . . . . . . . 
+        3 + . ::. . . ::. . . ::. . . + . . . . . . . . . . 
+          . ::. . . ::. . . ::. . . + . . . . . . . . . . . 
+        2 +:. + . +:. + . +:. + . + . + . + . + . + . + . + 
+          8       16      32      64     128     256     512 -&gt; RATE [kbps]
+         3.0     4.0     5.0     6.0     7.0     8.0     9.0 -&gt; Q
+                                             
+
+       optimal quality at given bitrate   <FONT color=#ff0000>OOOOOOO</FONT> (oPCM)  (± 0.3 bit)
+       perception limit (loud music)      + + + + (16kHz/ 80dB)
+       lines of constant audio bandwidth  ::::::: (1/2/4/8 kHz)
+
+</PRE></TD></TR></TBODY></TABLE>
+<P></CENTER>From this plot, the following parameters of the oPCM files were 
+derived. These values are used for the calibration oPCM files in the audio codec 
+evaluation at the beginning of this document.
+<P>
+<CENTER>
+<TABLE cellPadding=10 bgColor=#cccccc>
+  <TBODY>
+  <TR>
+    <TD><BR>
+      <CENTER>
+      <H3>perceptional quality Q</H3><I>Q</I> = log<SUB>2</SUB> 
+      <I>RATE</I>/kbps</CENTER><PRE>     Q   RATE   RES.  BW    Divisor
+         kbps   bit   kHz  2<SUP>16</SUP>/levels
+
+     4.0   16   6.0   1.333  1024 
+     4.6   24   6.4   1.888   800
+     5.0   32   6.7   2.396   640
+     5.6   48   7.4   3.263   400  "telephone"
+     6.0   64   7.7   4.168   320  "AM/MW"
+     6.6   96   8.0   6.000   256 
+     7.0  128   8.4   7.659   200
+     7.6  192   9.4  10.261   100  "Dolby B"
+     8.0  256  10.0  12.800    64  "FM/UKW"
+     8.6  384  12.7  15.144    10  "DSR" 
+     9.0  512  15.0  17.067     2
+     9.1  550  16.0  17.188     1  "CD" 
+
+     RATE: bit rate of oPCM data, per channel
+     RES.: sampling resolution
+     BW  : bandwidth = 1/2 smpl-rate  
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>Example: The sample sound <I>A</I> has the quality of <I>Q=</I>6.8 (or 68 dQ, 
+deci-Q) when it offers a better quality than a oPCM file at <I>Q</I>=6.6 (96 
+kbps per channel), but a lower quality than oPCM at <I>Q</I>=7.0 (128 kbps per 
+channel). If <I>A</I> is a stereo sound, it must be compared with stereo oPCM 
+sounds. The <I>Q</I> parameter is defined as the binary logarithm of the oPCM 
+bitrate per channel. You must indicate whether the <I>Q</I> value refers to a 
+mono or a stereo sound. 
+<P>
+<HR>
+
+<H3>The oPCM evaluation method compared to the old ISO methods</H3>Sound quality 
+evaluation is not a new topic. Until now, audio quality tests were performed as 
+follows: The "expert listener" was presented with a CD quality file and a test 
+file. Then, the listener had to rate the test item with school notes ranging 
+from 5.0 ("no difference to CD") to 1.0 ("extremely annoying distortions").
+<P>The shortcomings of this method (used by ISO) are obvious: The rating is 
+rather subjective and the only reference item is the perfect CD quality. That is 
+why the listener only knows what the rating "5.0" means. The lower ratings are 
+strongly a matter of taste because they are not strictly defined. As a 
+consequence, the results vary from listener to listener.
+<P>The oPCM method overcomes these problems: The listener knows exactly what a 
+rating of e.g. <I>Q</I>=6.7 means: The test item sounds better than the 
+<I>Q</I>=6.6 oPCM refernce file, but worse than the <I>Q</I>=6.8 oPCM file.
+<P>As an illustration, think about "sound intensity evaluation". A fictive 
+"intensity scale" could be: "5.0 = as loud as reference item", "4.0 = a little 
+bit weaker", "3.0 = weaker", "2.0 = much weaker", "1.0 = very much weaker". It 
+is obvious that this fictive scale would produce very subjective results. The 
+objective decibel (dB) scale would be much better. The oPCM <I>Q</I>-scale for 
+quality evaluation is like the decibel scale for intensity evaluation. 
+<P>
+<HR>
+
+<P>Thanks to: Nils Ehlert (Germany) and Bernhard Weber (Germany) for listening 
+tests; Ross Lewis (New Zealand) for some Layer III streams. 
+<P>
+<HR>
+<!--Start--><IMG height=1 alt="" 
+src="Optimal Pulse Code Modulation (oPCM)_files/nedstat.gif" width=1 
+align=right><!--Ende--> 
+<P><I><A href="http://cips02.physik.uni-bonn.de/~scheller/index.html" 
+target=_top>Stefan Scheller</A>, 
+<B>webmaster<NOSPAM>@</NOSPAM>sciencesite.de</B>, 18.10.96</I> 
+</P></BODY></HTML>
