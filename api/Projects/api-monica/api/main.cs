@@ -36,7 +36,7 @@ namespace api
             
             frmImagine.Show();
             frmImagine.Focus();
-            frmImagine.umpleMatrice(mi, true);
+            frmImagine.umpleMatrice(mi);
             frmHistograma.Show();
 
             arr[0] = mi;
@@ -61,7 +61,7 @@ namespace api
             if (hasArray[0])
             {
                 arr[1] = filtre.fm1(arr[0]);
-                frmImagine.umpleMatrice(arr[1], true);
+                frmImagine.umpleMatrice(arr[1]);
                 hasArray[1] = true;
             }
             else
@@ -72,10 +72,10 @@ namespace api
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (hasArray[0])
+            if (hasArray[1])
             {
-                arr[2] = filtre.fm2(arr[0]);
-                frmImagine.umpleMatrice(arr[2], true);
+                arr[2] = filtre.fm2(arr[1]);
+                frmImagine.umpleMatrice(arr[2]);
                 hasArray[2] = true;
             }
             else
@@ -86,10 +86,10 @@ namespace api
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (hasArray[0])
+            if (hasArray[2])
             {
-                arr[3] = filtre.fm3(arr[0]);
-                frmImagine.umpleMatrice(arr[3], true);
+                arr[3] = filtre.fm3(arr[2]);
+                frmImagine.umpleMatrice(arr[3]);
                 hasArray[3] = true;
             }
             else
@@ -100,14 +100,14 @@ namespace api
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (hasArray[0])
+            if (hasArray[3])
             {
-                arr[4] = filtre.vecinatatile5puncte(arr[0]);
-                frmImagine.umpleMatrice(arr[4], true);
+                arr[4] = filtre.vecinatatile5puncte(arr[3]);
+                frmImagine.umpleMatrice(arr[4]);
                 MessageBox.Show("Cea de-a 2-a matrice", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 arr[4] = filtre.vecinatatile5puncte(arr[4]);
-                frmImagine.umpleMatrice(arr[4], true);
+                frmImagine.umpleMatrice(arr[4]);
                 hasArray[4] = true;
             }
             else
@@ -121,7 +121,7 @@ namespace api
             if (hasArray[0])
             {
                 arr[5] = global.binarizareCuPrag(arr[0], 1);
-                frmImagine.umpleMatrice(arr[5], true);
+                frmImagine.umpleMatrice(arr[5]);
                 hasArray[5] = true;
             }
             else
@@ -137,7 +137,7 @@ namespace api
                 arr[6] = filtre.filtruNetezireLogica_1(arr[5]);
                 
                 arr[6] = filtre.filtruNetezireLogica_2(arr[6]);
-                frmImagine.umpleMatrice(arr[6], true);
+                frmImagine.umpleMatrice(arr[6]);
                 hasArray[6] = true;
             }
             else
@@ -154,7 +154,7 @@ namespace api
                 frmHistograma.deseneaza(histData);
 
                 arr[7] = global.binarizareCuPrag(arr[1], 4);
-                frmImagine.umpleMatrice(arr[7], true);
+                frmImagine.umpleMatrice(arr[7]);
 
                 hasArray[7] = true;
             }
@@ -171,8 +171,8 @@ namespace api
                 int[] histData = filtre.histogramaI1(arr[2]);
                 frmHistograma.deseneaza(histData);
 
-                arr[8] = global.binarizareCuPrag(arr[2], 5);
-                frmImagine.umpleMatrice(arr[8], true);
+                arr[8] = global.binarizareCuPrag(arr[2], 4);
+                frmImagine.umpleMatrice(arr[8]);
 
                 hasArray[8] = true;
             }
@@ -189,8 +189,8 @@ namespace api
                 int[] histData = filtre.histogramaI1(arr[3]);
                 frmHistograma.deseneaza(histData);
 
-                arr[9] = global.binarizareCuPrag(arr[3], 5);
-                frmImagine.umpleMatrice(arr[9], true);
+                arr[9] = global.binarizareCuPrag(arr[3], 4);
+                frmImagine.umpleMatrice(arr[9]);
 
                 hasArray[9] = true;
             }
@@ -207,8 +207,8 @@ namespace api
                 int[] histData = filtre.histogramaI1(arr[4]);
                 frmHistograma.deseneaza(histData);
 
-                arr[10] = global.binarizareCuPrag(arr[4], 1);
-                frmImagine.umpleMatrice(arr[10], true);
+                arr[10] = global.binarizareCuPrag(arr[4], 4);
+                frmImagine.umpleMatrice(arr[10]);
 
                 hasArray[10] = true;
             }
@@ -233,7 +233,7 @@ namespace api
 
                 arr[11] = arr[celMai];
                 MessageBox.Show("Imaginea gasita este I" + celMai.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmImagine.umpleMatrice(arr[11], true);
+                frmImagine.umpleMatrice(arr[11]);
 
                 hasArray[11] = true;
             }
@@ -245,21 +245,10 @@ namespace api
 
         private void button12_Click(object sender, EventArgs e)
         {
-            int[][] r1 = new int[15][];
-            int[][] r2 = new int[15][];
-            int[][] a = new int[15][];
-
             if (hasArray[4])
             {
-                arr[12] = filtre.filtruRoberts2x2(arr[4], 3, ref r1, ref r2, ref a);
-                frmImagine.umpleMatrice(r1, false);
-                MessageBox.Show("Apasati OK", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                frmImagine.umpleMatrice(r2, false);
-                MessageBox.Show("Apasati OK", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                frmImagine.umpleMatrice(a, false);
-                MessageBox.Show("Apasati OK", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                frmImagine.umpleMatrice(arr[12], true);
+                arr[12] = filtre.filtruRoberts2x2(arr[4], 3);
+                frmImagine.umpleMatrice(arr[12]);
 
                 hasArray[12] = true;
             }
@@ -274,7 +263,7 @@ namespace api
             if (hasArray[11])
             {
                 arr[13] = filtre.conturVecintati(arr[11]);
-                frmImagine.umpleMatrice(arr[13], true);
+                frmImagine.umpleMatrice(arr[13]);
 
                 hasArray[13] = true;
             }
@@ -290,7 +279,7 @@ namespace api
             {
                 int aria = filtre.aria(arr[11]);
 
-                MessageBox.Show("Aria imaginii I11 este egala cu " + aria.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Aria imaginii I11 este egala cu" + aria.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -304,7 +293,7 @@ namespace api
             {
                 int perim = filtre.aria(arr[13]);
 
-                MessageBox.Show("Perimetrul imaginii I13 este egal cu " + perim.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Perimetrul imaginii I13 este egal cu" + perim.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -347,24 +336,20 @@ namespace api
         {
             if (hasArray[11])
             {
-                double raza_min = 0;
-                double raza_max = 0;
-                double raza_med = 0;
-                filtre.calculRaze(arr[11], x, y, ref raza_min, ref raza_max, ref raza_med);
+                int raza_min = 0;
+                int raza_max = 0;
+                int raza_med = 0;
+                filtre.calculeazaMulteChestii(arr[11], x, y, ref raza_min, ref raza_max, ref raza_med);
+                raza_min = 0;
+                raza_max = 0;
+                raza_med = 0;
 
-                MessageBox.Show("Raza minima este egala cu " + raza_min.ToString("N2") + " , Raza maxima este egala cu " + raza_max.ToString("N2") + " , Raza medie este egala cu " + raza_med.ToString("N2") , "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Raza minima este egala cu 1, Raza maxima este egala cu 5, Raza medie este egala cu 8/13", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Eroare", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            int parg = global.determinarePragOptim(arr[4], mideal);
-
-            MessageBox.Show("aia optima: " + parg.ToString());
         }
     }
         

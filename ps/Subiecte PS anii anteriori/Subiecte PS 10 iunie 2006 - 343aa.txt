@@ -1,0 +1,60 @@
+s-a dat pe 2 numere, subiectele au fost asemanatoare, difereau doar
+printr-un + sau - (vedeti sa nu le confundati... :( )
+
+
+V1:
+
+1. Se da un semnal x[n] cu suportul 0:3 si val in ordine: 1, -1, 2, -2
+  a) Sa se calculeze TFD(x[n]) si sa se traseze graficul.
+  b) Ce semnal are TFD cu valorile: 1, -1, 2, -2?
+
+2.
+  a) Sa se dea exemplu de un filtru liniar, necauzal, variant in timp,
+     stabil (la alt nr era: neliniar, necauzal, invariant in timp, stabil)
+     si sa se demonstreze k are aceste prop.
+  b) Sa se calculeze iesirea sistemului daca la intrare se aplica
+     semnalul x[n] = 1 pt n = 0:3 si x[n] = 0 in rest.
+
+3. PP 5.3.5 pg 154 din breviarul teoretic (cartea de pe schur)
+
+4. Se dadea un filtru de genu: H(z) = [1 - z^(-2)] / 2
+  a) Sa se traseze caracteristica de frecv
+  b) Ce tip de filtru e?
+  c) Sa se calculeze rasp la intrarea x[n] = cos(Pi*n/2) 
+     (nr celalalt sin(Pi*n/4) si sa se calc valoarea max a iesirii
+  d) Daca se da un semnal de intr x[n] pt care iesirea e y[n] ce filtru
+     da pt intrarea x[n] iesirea y1[n] = 0 pt n = impar si y[n] in rest.
+
+5.
+  a) Sa de dem ca daca se da un semnal uniform distribuit pe
+     intervalul [a, b] si un cuantizor neuniform, cuantizorul nu poate
+     indeplini simultan ambele cond de optimalitare. 
+  b) Sa se dea ex de 2 cuantizoare neuniforme cu 3 puncte de decizie
+     (parca). Sa se arate care din ele este mai bun.
+
+
+
+V2:
+
+
+1. 
+  a) se dadea un semnal cu suport 0:3 si cu val 1 -2 2 1(parca) si sa calculezi TFD
+  b) ce semnal are TFD 1 -2 2 1
+
+2. dati exemplu de un filtru liniar, variant in timp, necauzal si stabil
+   si sa vezi care e iesire pt un semnal x[n] oarecare parca
+
+3. 
+  a) cum aplici TFD si ttf pt un semnal de lung M, esantionat pe N>M esantionane pe [o,pi]
+  b) cand aplici o chestie cu o suma legata de asta
+
+4. H(z)= (1+z^-2)/2 parca
+  a) sa faci caracteristica de frecventa
+  b) ca tip de filtru e
+  c) pt intrarea x[n]=sin(pi*n/4) (parca) sa gasesti max iesirii             ^
+  d) era ceva cu intrare x[n] oarecare (parca) sa spui nu stiu ce chesti cu y|2 (sageata in sus )
+ 
+5. 
+  a) dem ca un cuantizor neuniform def pe [a,b] nu indeplineste simultan ambele 
+     conditii de optimalitate
+  b) pt a=? si b=? (parca 0 si 2) sa faci 2 cuantizori si sa vezi care e mai bun

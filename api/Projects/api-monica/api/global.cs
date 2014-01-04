@@ -8,10 +8,8 @@ namespace api
 {
     static class global
     {
-        static public int matrix(int i, int j, int[][] matr)
+        static public int matrix(int i, int j, int[][] matr, int lines, int columns)
         {
-            int lines = matr.Length;
-            int columns = matr[0].Length;
             if ((i < 0) || (j < 0) || (i >= lines) || (j >= columns))
             {
                 return 0;
@@ -100,23 +98,6 @@ namespace api
             }
             return tm;
         }
-
-        static public int determinarePragOptim(int[][] mi, int[][] morig)
-        {
-            int[][][] comp = new int[10][][];
-
-            for (int i = 0; i < 10; i++)
-            {
-                comp[i] = global.binarizareCuPrag(mi, i);
-            }
-
-            return filtre.matriceaCeaMaiIdeala(morig, comp);
-        }
-
-        static public double distanta(int x1, int y1, int x2, int y2)
-        {
-            return Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-        }
     }
 
 
@@ -138,16 +119,16 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    tm[i][j] = global.matrix(i, j, mi) +
-                        global.matrix(i - 1, j - 1, mi) +
-                        global.matrix(i - 1, j, mi) +
-                        global.matrix(i - 1, j + 1, mi) +
-                        global.matrix(i, j + 1, mi) +
-                        global.matrix(i + 1, j + 1, mi) +
-                        global.matrix(i + 1, j, mi) +
-                        global.matrix(i + 1, j - 1, mi) +
-                        global.matrix(i, j - 1, mi);
-                    tm[i][j] = Convert.ToUInt16(Math.Round((double)tm[i][j] / 9));
+                    tm[i][j] = global.matrix(i, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j - 1, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j - 1, mi, lines, mi[i].Length) +
+                        global.matrix(i, j - 1, mi, lines, mi[i].Length);
+                    tm[i][j] /= 9;
                 }
 
             }
@@ -173,16 +154,16 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    tm[i][j] = 2 * global.matrix(i, j, mi) +
-                        global.matrix(i - 1, j - 1, mi) +
-                        global.matrix(i - 1, j, mi) +
-                        global.matrix(i - 1, j + 1, mi) +
-                        global.matrix(i, j + 1, mi) +
-                        global.matrix(i + 1, j + 1, mi) +
-                        global.matrix(i + 1, j, mi) +
-                        global.matrix(i + 1, j - 1, mi) +
-                        global.matrix(i, j - 1, mi);
-                    tm[i][j] = Convert.ToUInt16(Math.Round((double)tm[i][j] / 10));
+                    tm[i][j] = 2 * global.matrix(i, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j - 1, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j - 1, mi, lines, mi[i].Length) +
+                        global.matrix(i, j - 1, mi, lines, mi[i].Length);
+                    tm[i][j] /= 10;
                 }
 
             }
@@ -207,16 +188,16 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    tm[i][j] = 4 * global.matrix(i, j, mi) +
-                        global.matrix(i - 1, j - 1, mi) +
-                        2 * global.matrix(i - 1, j, mi) +
-                        global.matrix(i - 1, j + 1, mi) +
-                        2 * global.matrix(i, j + 1, mi) +
-                        global.matrix(i + 1, j + 1, mi) +
-                        2 * global.matrix(i + 1, j, mi) +
-                        global.matrix(i + 1, j - 1, mi) +
-                        2 * global.matrix(i, j - 1, mi);
-                    tm[i][j] = Convert.ToUInt16(Math.Round((double)tm[i][j] / 16));
+                    tm[i][j] = 4 * global.matrix(i, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j - 1, mi, lines, mi[i].Length) +
+                        2 * global.matrix(i - 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i - 1, j + 1, mi, lines, mi[i].Length) +
+                        2 * global.matrix(i, j + 1, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) +
+                        2 * global.matrix(i + 1, j, mi, lines, mi[i].Length) +
+                        global.matrix(i + 1, j - 1, mi, lines, mi[i].Length) +
+                        2 * global.matrix(i, j - 1, mi, lines, mi[i].Length);
+                    tm[i][j] /= 16;
                 }
 
             }
@@ -236,14 +217,14 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    ta[0] = global.matrix(i, j, mi);
-                    ta[1] = global.matrix(i - 1, j, mi);
-                    ta[2] = global.matrix(i, j + 1, mi);
-                    ta[3] = global.matrix(i + 1, j, mi);
-                    ta[4] = global.matrix(i, j - 1, mi);
+                    ta[0] = global.matrix(i, j, mi, lines, mi[i].Length);
+                    ta[1] = global.matrix(i-1, j, mi, lines, mi[i].Length);
+                    ta[2] = global.matrix(i, j+1, mi, lines, mi[i].Length);
+                    ta[3] = global.matrix(i+1, j, mi, lines, mi[i].Length);
+                    ta[4] = global.matrix(i, j-1, mi, lines, mi[i].Length);
 
                     ta = global.sortArray(ta);
-
+                   
                     tm[i][j] = ta[2];
                 }
             }
@@ -291,23 +272,23 @@ namespace api
         {
             int[][] tm = new int[15][];
             int lines = mi.Length;
-
+            
 
             for (int i = 0; i < lines; i++)
             {
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (global.matrix(i, j, mi) == 1 &&
-                            global.matrix(i - 1, j, mi) == 0 &&
-                            global.matrix(i - 1, j + 1, mi) == 0 &&
-                            global.matrix(i, j + 1, mi) == 0 &&
-                            global.matrix(i + 1, j + 1, mi) == 0 &&
-                            global.matrix(i + 1, j, mi) == 0 &&
+                    if (global.matrix(i, j, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i - 1, j, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i - 1, j + 1, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i, j + 1, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i + 1, j, mi, lines, mi[i].Length) == 0 &&
 
-                            global.matrix(i + 1, j - 1, mi) == 0 &&
-                            global.matrix(i, j - 1, mi) == 0 &&
-                            global.matrix(i - 1, j - 1, mi) == 0)
+                            global.matrix(i + 1, j - 1, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i, j - 1, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i - 1, j - 1, mi, lines, mi[i].Length) == 0)
                     {
                         tm[i][j] = 0;
                     }
@@ -339,16 +320,16 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (global.matrix(i, j, mi) == 0 &&
-                            global.matrix(i - 1, j, mi) == 1 &&
-                            global.matrix(i - 1, j + 1, mi) == 1 &&
-                            global.matrix(i, j + 1, mi) == 1 &&
-                            global.matrix(i + 1, j + 1, mi) == 1 &&
-                            global.matrix(i + 1, j, mi) == 1 &&
+                    if (global.matrix(i, j, mi, lines, mi[i].Length) == 0 &&
+                            global.matrix(i - 1, j, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i - 1, j + 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i, j + 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i + 1, j, mi, lines, mi[i].Length) == 1 &&
 
-                            global.matrix(i + 1, j - 1, mi) == 1 &&
-                            global.matrix(i, j - 1, mi) == 1 &&
-                            global.matrix(i - 1, j - 1, mi) == 1)
+                            global.matrix(i + 1, j - 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i, j - 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i - 1, j - 1, mi, lines, mi[i].Length) == 1)
                     {
                         tm[i][j] = 1;
                     }
@@ -372,17 +353,17 @@ namespace api
             int[] ta = new int[10];
             int lines = mi.Length;
 
-            for (int c = 0; c < 10; c++)
+            for (int c = 0; c<10; c++)
             {
                 ta[c] = 0;
             }
 
             for (int i = 0; i < lines; i++)
             {
-
+                
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    ta[mi[i][j]]++;
+                    ta[mi[i][j]]++; 
                 }
             }
             return ta;
@@ -448,7 +429,7 @@ namespace api
                 }
             }
 
-            int minVal = 15 * 15;
+            int minVal = 15*15;
             int minInd = 0;
 
             for (int c = 0; c < diferente.Length; c++)
@@ -470,28 +451,30 @@ namespace api
         /// <param name="mi"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        static public int[][] filtruRoberts2x2(int[][] mi, int p, ref int[][] r1, ref int[][] r2, ref int[][] a)
+        static public int[][] filtruRoberts2x2(int[][] mi, int p)
         {
             int[][] tm = new int[15][];
             int lines = mi.Length;
+
+            int[][] r1 = new int[15][];
+            int[][] r2 = new int[15][];
+            int[][] a = new int[15][];
 
             for (int i = 0; i < lines; i++)
             {
                 r1[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    r1[i][j] = global.matrix(i + 1, j, mi) - global.matrix(i, j + 1, mi);
+                    r1[i][j] = global.matrix(i + 1, j, mi, lines, mi[i].Length) - global.matrix(i, j + 1, mi, lines, mi[i].Length);
                 }
             }
-
-
 
             for (int i = 0; i < lines; i++)
             {
                 r2[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    r2[i][j] = global.matrix(i + 1, j + 1, mi) - global.matrix(i, j, mi);
+                    r2[i][j] = global.matrix(i + 1, j + 1, mi, lines, mi[i].Length) - global.matrix(i, j, mi, lines, mi[i].Length);
                 }
             }
 
@@ -501,13 +484,26 @@ namespace api
                 a[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    a[i][j] = Convert.ToInt16(System.Math.Sqrt(r1[i][j] * r1[i][j] + r2[i][j] * r2[i][j]));
+                    a[i][j] = Convert.ToInt16(System.Math.Sqrt(r1[i][j] * r1[i][j] + r2[i][j] * r2[i][j] ));
                 }
             }
 
 
-            tm = global.binarizareCuPrag(a, p);
-
+            for (int i = 0; i < lines; i++)
+            {
+                tm[i] = new int[mi[i].Length];
+                for (int j = 0; j < mi[i].Length; j++)
+                {
+                    if (a[i][j] >= p)
+                    {
+                        tm[i][j] = 1;
+                    }
+                    else
+                    {
+                        tm[i][j] = 0;
+                    }
+                }
+            }
             return tm;
         }
 
@@ -528,14 +524,14 @@ namespace api
                 tm[i] = new int[mi[i].Length];
                 for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (global.matrix(i, j, mi) == 1 &&
-                            global.matrix(i - 1, j, mi) == 1 &&
-                            global.matrix(i, j + 1, mi) == 1 &&
-                            global.matrix(i + 1, j, mi) == 1 &&
-                            global.matrix(i, j - 1, mi) == 1
+                    if (global.matrix(i, j, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i - 1, j, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i, j + 1, mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i+1, j , mi, lines, mi[i].Length) == 1 &&
+                            global.matrix(i , j - 1, mi, lines, mi[i].Length) == 1
                             )
                     {
-                        tm[i][j] = 0;
+                        tm[i][j] = 1;
                     }
                     else
                     {
@@ -580,22 +576,20 @@ namespace api
         static public void ariaSIperimetrul(int[][] mi, ref int aria, ref int perimetrul)
         {
             int lines = mi.Length;
-            int columns = mi[0].Length;
-
             int n1 = 0;
             int n2 = 0;
             int n3 = 0;
             int n4 = 0;
 
-            for (int i = 0; i < lines -1 ; i++)
+            for (int i = 0; i < lines-1; i++)
             {
-                for (int j = 0; j < columns -1; j++)
+                for (int j = 0; j < mi[i].Length - 1; j++)
                 {
-                    if (
-                            (mi[i][j] == 1 && mi[i][j + 1] == 0 && mi[i + 1][j + 1] == 0 && mi[i + 1][j] == 0) ||
-                            (mi[i][j] == 0 && mi[i][j + 1] == 1 && mi[i + 1][j + 1] == 0 && mi[i + 1][j] == 0) ||
-                            (mi[i][j] == 0 && mi[i][j + 1] == 0 && mi[i + 1][j + 1] == 1 && mi[i + 1][j] == 0) ||
-                            (mi[i][j] == 0 && mi[i][j + 1] == 0 && mi[i + 1][j + 1] == 0 && mi[i + 1][j] == 1)
+                    if ( 
+                            (mi[i][j] == 1 && mi[i][j+1] == 0 && mi[i+1][j+1] == 0 && mi[i+1][j] == 0) ||
+                            (mi[i][j] == 0 && mi[i][j+1] == 1 && mi[i+1][j+1] == 0 && mi[i+1][j] == 0) ||
+                            (mi[i][j] == 0 && mi[i][j+1] == 0 && mi[i+1][j+1] == 1 && mi[i+1][j] == 0) ||
+                            (mi[i][j] == 0 && mi[i][j+1] == 0 && mi[i+1][j+1] == 0 && mi[i+1][j] == 1) 
                         )
                     {
                         n1++;
@@ -630,9 +624,9 @@ namespace api
 
                 }
             }
-            //tm[i][j] = Convert.ToUInt16(Math.Round((double)tm[i][j] / 16));;
-            aria = Convert.ToUInt16(Math.Round((double)(n1 + 2 * n2 + 3 * n3 + 4 * n4) / 4));
-            perimetrul = Convert.ToInt16(Math.Round((double)n2 + (double)n3 * System.Math.Sqrt(2)));
+
+            aria = n1/4 + 2*n2/4  + 3*n3 / 4 + 4 * n4 / 4;
+            perimetrul = Convert.ToInt16(n2 + n3 * System.Math.Sqrt(2));
         }
 
         /// <summary>
@@ -645,19 +639,16 @@ namespace api
         static public void centrulDeGreutate(int[][] mi, int aria, ref int x, ref int y)
         {
             int lines = mi.Length;
-            int columns = mi[0].Length;
-
             int nrlinii = 0;
             int nrcoloane = 0;
-
             int I = 0;
             int J = 0;
 
-            for (int i = 0; i < lines; i++)
+            for (int i = 0; i < lines-1; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (mi[i][j] == 1)
+                    if (mi[i + 1][j] == 1)
                     {
                         nrlinii++;
                     }
@@ -668,11 +659,11 @@ namespace api
             }
             J = 0;
 
-            for (int i = 0; i < lines; i++)
+            for (int i = 0; i < lines - 1; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (mi[j][i] == 1)
+                    if (mi[i + 1][j] == 1)
                     {
                         nrcoloane++;
                     }
@@ -698,45 +689,42 @@ namespace api
         /// <param name="raza_med"></param>
         static public void calculeazaMulteChestii(int[][] mi, int IG, int JG, ref int raza_minima, ref int raza_maxima, ref int raza_med)
         {
-
+        
             int[] raza_min = new int[4];
             int[] raza_max = new int[4];
             int raza = 0;
 
 
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG + raza][JG] != 1)
-                {
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){
+               if (mi[IG+raza][JG] != 1)
+               {
                     raza++;
-                }
-                else
-                {
+               }
+               else
+               {
                     raza_min[0] = raza;
                     break;
-                }
+               }
             }
 
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG - raza][JG] != 1)
-                {
-                    raza++;
-                }
-                else
-                {
-                    raza_min[1] = raza;
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){
+                   if(mi[IG-raza][JG] != 1)
+                   {
+                        raza ++;
+                   }
+                   else
+                   {
+                        raza_min[1] = raza;
+                        break;
+                   }
             }
 
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG][JG + raza] != 1)
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                if(mi[IG][JG+raza] != 1)
                 {
-                    raza++;
+                    raza ++;
                 }
                 else
                 {
@@ -746,69 +734,64 @@ namespace api
             }
 
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG][JG - raza] != 1)
-                {
-                    raza++;
-                }
-                else
-                {
-                    raza_min[3] = raza;
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                   if(mi[IG][JG-raza] != 1)
+                   {
+                        raza ++;
+                   }
+                   else
+                   {
+                        raza_min[3] = raza;
+                        break;
+                   }
             }
-
+             
             raza_min = global.sortArray(raza_min);
             raza_minima = raza_min[0];
 
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG + raza][JG + raza] != 1)
-                    raza++;
-                else
-                {
-                    raza_max[0] = Convert.ToInt16(raza * System.Math.Sqrt(2));
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                   if(mi[IG+raza][JG+raza] != 1)
+                        raza ++;
+                   else
+                   {
+                        raza_max[0] = Convert.ToInt16(raza* System.Math.Sqrt(2));
+                        break;
+                   }
             }
 
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG - raza][JG - raza] != 1)
-                    raza++;
-                else
-                {
-                    raza_max[1] = Convert.ToInt16(raza * System.Math.Sqrt(2));
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                   if(mi[IG-raza][JG-raza] != 1)
+                        raza ++;
+                   else
+                   {
+                        raza_max[1] = Convert.ToInt16(raza* System.Math.Sqrt(2));
+                        break;
+                   }
             }
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG - raza][JG + raza] != 1)
-                    raza++;
-                else
-                {
-                    raza_max[2] = Convert.ToInt16(raza * System.Math.Sqrt(2));
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                   if(mi[IG-raza][JG+raza] != 1)
+                        raza ++;
+                   else
+                   {
+                         raza_max[2] = Convert.ToInt16(raza* System.Math.Sqrt(2));
+                        break;
+                   }
             }
             raza = 0;
-            while ((IG + raza) <= mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0)
-            {
-                if (mi[IG + raza][JG - raza] != 1)
-                    raza++;
-                else
-                {
-                    raza_max[3] = Convert.ToInt16(raza * System.Math.Sqrt(2));
-                    break;
-                }
+            while ((IG + raza) < mi.Length || (IG - raza) >= 0 || (JG + raza) < mi[0].Length || (JG - raza) >= 0){    
+                   if(mi[IG+raza][JG-raza] != 1)
+                        raza ++;
+                   else
+                   {
+                         raza_max[3] = Convert.ToInt16(raza* System.Math.Sqrt(2));
+                        break;
+                   }
             }
 
-            raza_max = global.sortArray(raza_max);
+             raza_max = global.sortArray(raza_max);
             raza_maxima = raza_max[3];
 
             raza = 0;
@@ -824,47 +807,6 @@ namespace api
                     }
                 }
             }
-        }
-
-        static public void calculRaze(int[][] mi, int IG, int JG, ref double raza_minima, ref double raza_maxima, ref double raza_med)
-        {
-            int lines = mi.Length;
-            int columns = mi[0].Length;
-            double suma = 0;
-            int nrDist = 0;
-            double distTmp;
-
-            raza_minima = 15 * 15;
-            raza_maxima = 0;
-
-            for (int i = 0; i < lines; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    if ((i == IG && j == JG) || (mi[i][j] == 0))
-                    {
-                        continue;
-                    }
-
-                    distTmp = global.distanta(IG, JG, i, j);
-                    if (distTmp > raza_maxima)
-                    {
-                        raza_maxima = distTmp;
-                    }
-
-                    if (distTmp < raza_minima)
-                    {
-                        raza_minima = distTmp;
-                    }
-
-                    suma += distTmp;
-                    nrDist++;
-
-                }
-            }
-
-            raza_med = suma / nrDist;
-
         }
 
     }

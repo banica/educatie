@@ -48,10 +48,9 @@ namespace api
             }
         }
 
-        public void umpleMatrice(int[][] mi, bool useColors)
+        public void umpleMatrice(int[][] mi)
         {
             int decAgain;
-            int col;
             string[] culori = new string[10];
             culori[0] = "000000";
             culori[1] = "202020";
@@ -68,16 +67,9 @@ namespace api
             {
                 for (int j = 0; j < 15; j++)
                 {
-                    if (useColors)
-                    {
-                        col = mi[i][j];
-                    }
-                    else
-                    {
-                        col = 0;
-                    }
+                    decAgain = int.Parse(culori[mi[i][j]], System.Globalization.NumberStyles.HexNumber);
 
-                    decAgain = int.Parse(culori[col], System.Globalization.NumberStyles.HexNumber);
+                    //elem[i][j].BackColor = Color.FromArgb(decAgain);
                     elem[i][j].Text = mi[i][j].ToString();
                 }
             }

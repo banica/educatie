@@ -50,6 +50,7 @@ namespace api
             this.cerinta18ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.despreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.pragOptimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,8 @@ namespace api
             this.cerinta15ToolStripMenuItem,
             this.cerinta16ToolStripMenuItem,
             this.cerinta17ToolStripMenuItem,
-            this.cerinta18ToolStripMenuItem});
+            this.cerinta18ToolStripMenuItem,
+            this.pragOptimToolStripMenuItem});
             this.aplicatieToolStripMenuItem.Name = "aplicatieToolStripMenuItem";
             this.aplicatieToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.aplicatieToolStripMenuItem.Text = "Aplicatie";
@@ -233,6 +235,13 @@ namespace api
             this.label1.TabIndex = 1;
             this.label1.Text = "Achizitia si prelucrarea imaginilor";
             // 
+            // pragOptimToolStripMenuItem
+            // 
+            this.pragOptimToolStripMenuItem.Name = "pragOptimToolStripMenuItem";
+            this.pragOptimToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pragOptimToolStripMenuItem.Text = "prag optim";
+            this.pragOptimToolStripMenuItem.Click += new System.EventHandler(this.pragOptimToolStripMenuItem_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +284,7 @@ namespace api
         private System.Windows.Forms.ToolStripMenuItem cerinta16ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerinta17ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerinta18ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pragOptimToolStripMenuItem;
     }
 }
 

@@ -112,11 +112,6 @@ namespace api
 
             return filtre.matriceaCeaMaiIdeala(morig, comp);
         }
-
-        static public double distanta(int x1, int y1, int x2, int y2)
-        {
-            return Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-        }
     }
 
 
@@ -470,11 +465,14 @@ namespace api
         /// <param name="mi"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        static public int[][] filtruRoberts2x2(int[][] mi, int p, ref int[][] r1, ref int[][] r2, ref int[][] a)
+        static public int[][] filtruRoberts2x2(int[][] mi, int p)
         {
             int[][] tm = new int[15][];
             int lines = mi.Length;
 
+            int[][] r1 = new int[15][];
+            int[][] r2 = new int[15][];
+            int[][] a = new int[15][];
 
             for (int i = 0; i < lines; i++)
             {
@@ -642,19 +640,16 @@ namespace api
         static public void centrulDeGreutate(int[][] mi, int aria, ref int x, ref int y)
         {
             int lines = mi.Length;
-            int columns = mi[0].Length;
-
             int nrlinii = 0;
             int nrcoloane = 0;
-
             int I = 0;
             int J = 0;
 
-            for (int i = 0; i < lines; i++)
+            for (int i = 0; i < lines-1; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (mi[i][j] == 1)
+                    if (mi[i + 1][j] == 1)
                     {
                         nrlinii++;
                     }
@@ -665,16 +660,16 @@ namespace api
             }
             J = 0;
 
-            for (int i = 0; i < lines; i++)
+            for (int i = 0; i < lines - 1; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < mi[i].Length; j++)
                 {
-                    if (mi[j][i] == 1)
+                    if (mi[i + 1][j] == 1)
                     {
                         nrcoloane++;
                     }
                 }
-                nrcoloane = i * nrcoloane;
+                nrcoloane = J * nrcoloane;
                 J = J + nrcoloane;
                 nrcoloane = 0;
             }
@@ -813,47 +808,6 @@ namespace api
                     }
                 }
             }
-        }
-
-        static public void calculRaze(int[][] mi, int IG, int JG, ref double raza_minima, ref double raza_maxima, ref double raza_med)
-        {
-            int lines = mi.Length;
-            int columns = mi[0].Length;
-            double suma = 0;
-            int nrDist = 0;
-            double distTmp;
-
-            raza_minima = 15 * 15;
-            raza_maxima = 0;
-
-            for (int i = 0; i < lines; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    if ((i == IG && j == JG) || (mi[i][j] == 0))
-                    {
-                        continue;
-                    }
-
-                    distTmp = global.distanta(IG, JG, i, j);
-                    if (distTmp > raza_maxima)
-                    {
-                        raza_maxima = distTmp;
-                    }
-
-                    if (distTmp < raza_minima)
-                    {
-                        raza_minima = distTmp;
-                    }
-
-                    suma += distTmp;
-                    nrDist++;
-
-                }
-            }
-
-            raza_med = suma / nrDist;
-
         }
 
     }
