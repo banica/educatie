@@ -1,0 +1,47 @@
+- PS 9 iunie 2006, 342AB si 343AB -
+
+BILETUL 4
+
+
+1. H(e^jw) =    0         pentru 0 <= |w| <= pi/2
+		e^(-jw)   pentru pi/2 <= |w| <= pi
+   
+   (w = omega)
+a. Caracteristica de frecventa(amplitudine+faza)
+b. Raspunsul la impuls
+c. Iesirea pentru intrarea x[n] = sin(pi*n/3) + cos(2*pi*n/3)
+
+
+2. Se da H(z) = z^(-2) + z^(-1) + z^1 + z^2 
+
+a. Caracteristica de frecventa a lui H(z)
+b. Caracteristica lui z^(-1) * H(z)	
+c. Cat este iesirea y[n],  daca intrarea are 3 valori nenule 
+	x[0] = 2, x[1] = -1, x[2] = 1.  
+d. Schema de implementare pentru H(z), 1/H(z).
+
+
+3. Se da semnalul cu suport 0:N-1 
+	x[n] =  1, pentru n impar
+		0, in rest
+
+a. Calculati transformata Fourier a acestuia
+b. Semnalul y[n] este x[n] interpolat cu 3, reprezentati amplitudinea lui X(w) si Y(w). 
+
+
+4. Dati exemplu de un filtru FIR, H(z) de grad 3, cu coeficienti antisimetrici, avand zerourile in interiorul cercului unitate.
+
+a. 
+b. Reprezentati implementari eficiente pentru H(z), H(z)+H(z^-1), 1/H(z)
+
+
+5. Se da cuantizorul q: 
+	q(0) = 0.2
+	q(0.2) = 0.2
+	q(0.4)  = 0.5
+	q(0.5)  = 0.5
+	q(0.6)  = 0.5
+	q(0.8)  = 0.9
+
+a. Scrieti o codificare cu 3 coduri.
+b. Se poate gasi o codificare mai buna pentru esantioanele date?

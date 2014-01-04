@@ -1,0 +1,36 @@
+# Project: tema
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = t2c.o arc.o cmp.o $(RES)
+LINKOBJ  = t2c.o arc.o cmp.o $(RES)
+LIBS =  -L"C:/DEV-CPP/lib"  
+INCS =  -I"C:/DEV-CPP/include" 
+CXXINCS =  -I"C:/DEV-CPP/lib/gcc/mingw32/3.4.2/include"  -I"C:/DEV-CPP/include/c++/3.4.2/backward"  -I"C:/DEV-CPP/include/c++/3.4.2/mingw32"  -I"C:/DEV-CPP/include/c++/3.4.2"  -I"C:/DEV-CPP/include" 
+BIN  = tema.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before tema.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "tema.exe" $(LIBS)
+
+t2c.o: t2c.c
+	$(CC) -c t2c.c -o t2c.o $(CFLAGS)
+
+arc.o: arc.c
+	$(CC) -c arc.c -o arc.o $(CFLAGS)
+
+cmp.o: cmp.c
+	$(CC) -c cmp.c -o cmp.o $(CFLAGS)

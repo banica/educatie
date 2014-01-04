@@ -1,0 +1,41 @@
+Prelucrarea semnalelor - 2006
+
+Programarea examenelor:
+  - inainte de 11 iunie 2006 (inclusiv)
+  - cel mult trei grupe pe zi (doua grupe pot fi simultan)
+
+Punctaje:
+  - 60 puncte examen
+  - 40 puncte laborator
+
+Conditii de promovare:
+  - laborator efectuat (toate lucrarile)
+  - minimum 15 puncte la examen
+  - minimum 50 puncte in total
+
+Examenul este scris si consta exclusiv in rezolvare
+de probleme. Studentii au acces la orice materiale scrise.
+Schimbul de informatii intre studenti in timpul examenului
+se pedepseste cu (cel putin) pierderea examenului pentru cei
+in cauza, indiferent de momentul in care a fost constatat.
+
+Materiale pentru curs:
+
+www.schur.pub.ro (download)
+deja disponibile:
+  - curs (suport teoretic, probleme rezolvate, probleme propuse)
+  - set 1 lucrari laborator (8 lucrari)
+vor aparea:
+  - prezentari, pe capitole (vor fi disponibile pe masura ce le scriu,
+urmariti si kinder.lx.ro)
+  - exemple de subiecte de examen
+
+isps.ecosys.pub.ro
+  - seturi 2 si 3 laborator
+  - cursul lui Dan Stefanoiu (pentru informare alternativa)
+
+Lucrari de laborator:
+  - trei seturi: general (8 lucrari), FFT (3 lucrari), compresie (3 lucrari)
+  - fiecare student alege unul dintre cele trei seturi,
+de comun acord cu indrumatorul de laborator !
+

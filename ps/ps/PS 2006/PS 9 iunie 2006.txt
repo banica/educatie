@@ -1,0 +1,39 @@
+Subiecte PS 9 iunie 2006, 344AA... compilatie de pe messenger :)
+
+Varianta 1, de la Bogdan:
+
+1) ceva asemanator cu 3 si 4 din 5.gif [din "ceva subiecte ps"], numai ca erau alte date, dar acelasi enunt
+
+2) se dadea un y[n]=1 pt n=0:1 si 0 in rest
+- se cere un x[n] si un H(z) care sa dea y[n]
+- sa se verifice liniaritatea, inv. in timp, cauzalitatea pt H determinat mai sus
+
+3) ai un aparat de masurat cu U=220V si 50Hz
+cum afli frecv de esantionare si in ce conditii pot aparea erori
+
+
+4) x[n]=1+sin wn, w=3Pi/4, cerea TFD si un raspuns pt o exponentiala
+
+
+Varianta 2, de la Alec:
+
+1) era un aprat de afisare a frecventelor si un aparat care emitea la
+o frecvneta de 440 Hz
+   a) cum se calc frecv de esantionare 
+   b) ce pb pot aparea
+
+2) era o fct de genul 1+cos pi/4, sa se afle perioada, si desenul 
+
+3) se dadea un filtru trece-banda:
+   a) raspunsul la impuls
+   b) met de implemnatre a ferstrei 
+   c) este filtru cu faza liniara?
+
+4. y[n]= 1 pt 0:2 si 0 in rest 
+   a) det un H si un x astfel incat as fie ac frecv  (?!)
+   b) este sistemul ales stabil, liniar, cauzal?
+
+5. se dadea: c1=0,2 c2=0,4 c3=0,8 
+   a) celule voronoi optime
+   b) pt distributie uniforma sa se calculeze distorisiunea 
+

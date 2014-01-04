@@ -1,0 +1,28 @@
+function x = sort_bitinv(x)
+% Sorteaza vectorul x in ordinea bit-inversa a indicilor.
+% Vectorul trebuie sa aibe lungimea putere a lui doi.
+
+N = length(x);
+L = log2(N);
+for n = 0 : N-1
+  r = bitinv(n,L);
+  if r > n
+    a = x(n+1);
+    x(n+1) = x(r+1);
+    x(r+1) = a;
+  end
+end
+
+%---------------------------------
+function r = bitinv(n, L)
+% n este un numar reprezentat pe L biti
+% functia intoarce numarul obtinut prin inversarea ordinii bitilor
+
+r = 0;
+N = 1;
+for i = L:-1:1
+  if bitget(n, i)
+    r = r + N;
+  end
+  N = 2*N;
+end
