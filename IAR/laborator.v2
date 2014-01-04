@@ -1,0 +1,39 @@
+.PROGRAM pp()
+	APPRO poz1, 80
+	BREAK
+	SPEED 20
+	MOVES poz1
+	CLOSEI
+	DEPARTS 80
+	BREAK
+	APPRO poz2, 80
+	BREAK
+	SPEED 20
+	MOVES poz2
+	OPENI
+	DEPARTS 80
+	RETURN
+.END
+
+.PROGRAM prog()
+	PARAMETER HAND.TIME = 0.5
+	SPEED 100 ALWAYS
+	MOVET safe, 2
+	BREAK
+	VPICTURE (1) 2
+	VFINDER (1, 1, -1) 1011
+	VWAIT
+	n = VQUEUE(1,"T")
+	FOR i = 1 TO n
+	    VLOCATE (1, 2, 7) "T", obj
+	    IF VFEATURE(1) THEN
+		SET poz1 = to.cam[1]:obj:TRANS(0,0,1,0,180,-42)
+		CALL pp()
+	    ELSE
+		TYPE "nu s-a facut localizarea"
+	    END
+	END
+	MOVE safe
+.END
+
+

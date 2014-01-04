@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Scroll - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\Madalin\LOCALS~1\Temp\RSP17B.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/Scroll.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\My Documents\Ore\2003\Iom\Lab final\Lab04\Scroll\SCROLL.C"
+]
+Creating command line "cl.exe @D:\DOCUME~1\Madalin\LOCALS~1\Temp\RSP17B.tmp" 
+Creating temporary file "D:\DOCUME~1\Madalin\LOCALS~1\Temp\RSP17C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Scroll.pdb" /debug /machine:I386 /out:"Debug/Scroll.exe" /pdbtype:sept 
+".\Debug\SCROLL.OBJ"
+]
+Creating command line "link.exe @D:\DOCUME~1\Madalin\LOCALS~1\Temp\RSP17C.tmp"
+<h3>Output Window</h3>
+Compiling...
+SCROLL.C
+Linking...
+
+
+
+<h3>Results</h3>
+Scroll.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

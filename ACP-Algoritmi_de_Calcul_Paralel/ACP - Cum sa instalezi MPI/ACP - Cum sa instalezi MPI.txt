@@ -1,0 +1,145 @@
+6:40 PM 18-Oct-04
+
+Este nevoie de:
+- Visual Studio 6.0 sau mai nou; ***
+- Windows 2000 (tip NT); ***
+- mpi 0.9 sau mai nou (0.9 este suficient) - de pe 'schur.pub.ro';
+- manual mpi - 'schur.pub.ro';
+- manual acp - 'schur.pub.ro';
+
+Cum se instaleaza mpi:
+
+- pachetul mpi 0.9 se dezarhiveaza in 'c:\program files';
+
+Cum se utilizeaza mpi:
+
+- se porneste visual studio;
+- se deschide un nou proiect: File -> New -> Projects -> Win 32 Console Application
+- se aleg pt proiect un director care sa-l contina si un nume;
+- OK -> Finish.
+- se adauga un nou fisier la proiect: File -> New -> C++ Source File;
+- se introduce un nume pt fisierul cpp, OK.
+- se adauga la proiect fisierul 'cvwmpi.lib': 
+  in 'File view' se da 'click-dreapta' pe directorul 'Resource Files' -> Add Files to Folder ->
+-> browse... -> C:\program files\wmpi\lib\console -> cvwmpi.lib -> OK;
+
+- se include 'mpi.h' in proiect folosind directiva "inlude" si calea corespunzatoare: 
+-> #include "C:\Program Files\wmpi\include\mpi.h";
+
+- se scrie programul si se compileaza;
+- se creaza un fisier text in directoul 'Debug' din directorul_proiect (Debug este si locul unde se genereaza .exe-ul)
+		+ acest fisier trebuie sa aiba numele aplicatiei asa cum se gaseste ea in 'Debug' si extensia .pg;
+- se deschide fisierul .pg cu Notepad si se scrie (si se salveaza :) ): "local n"
+		+ unde n+1 va fi numarul de procesoare pe care va rula aplicatia (solutia); 
+
+- se ruleaza (F5 - rulare cu debug).
+
+
+In continuare:
+
+		Scheletul unui program mpi:
+
+#include <stdio.h>
+#include "mpi.h"
+
+void main(int argc, char ** argv)
+{
+	 MPI_Status status;
+   	 int myrank, ranksize;
+
+	 MPI_Init (&argc, &argv);		     /* initialize MPI system */
+	 MPI_Comm_rank (MPI_COMM_WORLD, &myrank);    /* my ID in MPI system */
+	 MPI_Comm_size (MPI_COMM_WORLD, &ranksize);  /* total nr. of processors in the MPI system*/
+
+/*********************************************/
+
+//Aici se introduce solutia proprie
+
+/*********************************************/
+
+	 MPI_Finalize ();
+	 ExitProcess(0);
+
+}//end main()
+
+		Cel mai simplu program mpi:
+
+#include <stdio.h>
+#include "mpi.h"
+
+void main(int argc, char ** argv)
+{
+	 MPI_Status status;
+   	 int myrank, ranksize;
+
+	 MPI_Init (&argc, &argv);		     /* initialize MPI system */
+	 MPI_Comm_rank (MPI_COMM_WORLD, &myrank);    /* my ID in MPI system */
+	 MPI_Comm_size (MPI_COMM_WORLD, &ranksize);  /* total nr. of processors in the MPI system*/
+
+/*********************************************/
+
+	 printf("\n[%d]: Salut!",myrank);
+
+/*********************************************/
+
+	 MPI_Finalize ();
+	 ExitProcess(0);
+
+}//end main();
+
+		Transmiterea unui mesaj, intr-un singur sens, pe un inel"
+
+
+#include <stdio.h>
+#include <conio.h>
+
+#include "C:\Program Files\wmpi\include\mpi.h"
+
+
+
+void main(int argc, char ** argv)
+{
+	 MPI_Status status;
+   	 int myrank, ranksize;
+
+	 char mesaj[10]="";
+	 char recv[10]="";
+
+	 MPI_Init (&argc, &argv);		     /* initialize MPI system */
+	 MPI_Comm_rank (MPI_COMM_WORLD, &myrank);    /* my place in MPI system */
+	 MPI_Comm_size (MPI_COMM_WORLD, &ranksize);  /* size of MPI system */
+
+	 
+	 
+	 if(myrank==0)
+	 {
+		strcpy(mesaj,"Salut");
+		MPI_Send (&mesaj, 5, MPI_CHAR, 1, 100, MPI_COMM_WORLD);
+		printf("\n[%d]:Proc. [%d] spune: %s ",myrank, myrank, mesaj);
+		getch();
+	 }
+	 else
+		 if(myrank!=ranksize-1)
+		 {
+			 MPI_Recv (recv, 5, MPI_CHAR, myrank-1, 100, MPI_COMM_WORLD, &status);
+			 printf("\n[%d]:Proc. [%d] raspunde: %s ",myrank, myrank, recv);
+			 strcpy(mesaj,recv);
+			 MPI_Send (&mesaj, 5, MPI_CHAR, myrank+1, 100, MPI_COMM_WORLD);
+		 }
+		 else
+		 {
+			 MPI_Recv (recv, 5, MPI_CHAR, myrank-1, 100, MPI_COMM_WORLD, &status);
+			 printf("\n[%d]:Proc. [%d] raspunde: %s ",myrank, myrank, recv);
+		 }
+
+
+
+	 MPI_Finalize ();
+	 ExitProcess(0);
+}//end main();
+
+
+
+
+Explicatii: 
+*** (se poate downloada prin programul MSDNAA de la facultate cu licenta gratuita - EG3.. something)
